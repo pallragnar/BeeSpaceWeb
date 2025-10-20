@@ -1,0 +1,265 @@
+﻿/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- FONTS --- */
+
+@font-face {
+    font-family: 'Chakra';
+    src: url('fonts/ChakraPetch-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Chakra';
+    src: url('fonts/ChakraPetch-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('fonts/Comfortaa-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('fonts/Comfortaa-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* --- BODY --- */
+
+body {
+    font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+    color: #222;
+    background-color: #fafafa;
+    line-height: 1.6;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjust height if you want more or less of the image shown */
+    overflow: hidden;
+}
+
+.keyart {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.fadeout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(250,250,250,0), #fafafa);
+}
+
+/* --- MAIN CONTENT --- */
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+p {
+    color: #444;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    text-align: left;
+}
+
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- FLOATING LOGO ON HERO --- */
+.floating-logo {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 420px; /* adjust size as needed */
+    height: auto;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.floating-logo:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Gentle up-down floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* --- ANIMATION --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #fafafa;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.logo-row img {
+    max-width: 200px; /* ✅ no logo wider than 200px */
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.logo-row img:hover {
+    opacity: 1;
+}
+
+/* --- SPLIT SECTIONS --- */
+.split-left,
+.split-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    flex-wrap: wrap; /* ensures stacking on small screens */
+}
+
+.split-left img,
+.split-right img {
+    width: 45%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    /*box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);*/
+}
+
+.split-left .text,
+.split-right .text {
+    flex: 1;
+    min-width: 250px;
+    color: #444;
+}
+
+.split-left .text h2,
+.split-right .text h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    color: #333;
+}
+
+.split-left .text p,
+.split-right .text p {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+/* Reverse order for right-image sections */
+.split-right {
+    flex-direction: row-reverse;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .split-left,
+    .split-right {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .split-left img,
+    .split-right img {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .split-left .text h2,
+    .split-right .text h2,
+    .split-left .text p,
+    .split-right .text p {
+        text-align: center;
+    }
+}
+
+/* --- WIDE IMAGE SECTION --- */
+.wide-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5rem 0 3rem 0;
+}
+
+.wide-image img {
+    max-width: 1200px;
+    border-radius: 12px;
+    /*box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);*/
+    height: auto;
+    object-fit: cover;
+}
