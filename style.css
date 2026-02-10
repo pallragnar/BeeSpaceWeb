@@ -85,6 +85,19 @@ p {
     text-align: left;
 }
 
+ul {
+    text-align: left;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    list-style-position: inside;
+}
+
+ul li {
+    color: #444;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
 a {
     color: #0094ff;
     font-weight: 600;
