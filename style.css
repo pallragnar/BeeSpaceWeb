@@ -277,3 +277,77 @@ footer {
     margin: 0;
     text-align: center;
 }
+
+/* --- TOP MENU NAVIGATION --- */
+.top-menu {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.top-menu-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.top-menu-links li {
+    margin: 0;
+}
+
+.top-menu-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-menu-links a:hover {
+    color: #0094ff;
+}
+
+.steam-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.steam-logo {
+    height: 20px;
+    width: auto;
+    filter: brightness(0.2);
+    transition: filter 0.3s ease;
+}
+
+.steam-link:hover .steam-logo {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(99%) saturate(2667%) hue-rotate(189deg);
+}
+
+@media (max-width: 768px) {
+    .top-menu-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .steam-logo {
+        height: 16px;
+    }
+}
